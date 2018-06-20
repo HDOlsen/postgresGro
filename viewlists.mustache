@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center mt-5">
+    <h3 class="list">Shopping List Manager</h3>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+<h3 class="listTrip">Grocery List</h3>
+</div>
+
+<!-- running a loop on  -->     
+
+<div class="d-flex flex-column align-items-center mt-2">
+    <ul>
+  {{#groceryList}}
+        <li class=" ml-5 w-300">
+        {{name}}
+        </li>
+        <li class="ml-5  w-300">
+        {{item}}
+        </li>
+        <li class="ml-5  w-300">
+        {{quantity}}
+        </li>
+        <li class="ml-5  w-300">
+        {{price}}
+        </li>
+<!-- creating forms so we can submit tripId for deletion -->
+        <form action='/deleteList' method='post'>
+        <input type="hidden" name="delId" value='{{delId}}' />
+        <input type="submit" value="Delete"/>
+        </form>
+      {{/groceryList}}
+    </ul>
+</div>
+
+
+
+</body>
+<script src="grocery.js"></script>
+
+</html>
+
+    
